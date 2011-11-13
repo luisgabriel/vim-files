@@ -1,0 +1,3 @@
+[submodule "bundle/qml"]
+	path = bundle/qml
+	url = https://github.com/peterhoeg/vim-qml.git
