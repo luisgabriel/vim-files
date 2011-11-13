@@ -26,7 +26,9 @@ au BufRead,BufNewFile *.pro     setfiletype make
 
 "source ~/.vim/scripts/kde-devel.vim
 
+" Include pathogen
 call pathogen#infect()
+call pathogen#helptags()
 
 syntax on
 filetype plugin on
