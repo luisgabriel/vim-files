@@ -22,10 +22,19 @@ set number          " show line numbers
 set title           " show title in console title bar
 set ttyfast         " smoother changes
 
+" show unwanted spaces with dots
+set list listchars=tab:>-,trail:.,extends:>
+
 " keep a backup file in a separate directory
 set backup
 set backupdir=~/.vim_local/backup
 set directory=~/.vim_local/tmp
+
+" show/hide NERDTree pressing F2
+map <F2> :NERDTreeToggle<CR>
+
+" :wsudo to save a protected file
+cab wsudo w !sudo tee %
 
 " set correct color set in terminal
 if !has("gui_running")
