@@ -30,6 +30,14 @@ set backup
 set backupdir=~/.vim_local/backup
 set directory=~/.vim_local/tmp
 
+" configure tags
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/qt4
+
+" OmniCppComplete
+let OmniCpp_ShowPrototypeInAbbr=1 " show function parameters
+let OmniCpp_MayCompleteScope=1    " autocomplete after ::
+
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
 
@@ -42,8 +50,6 @@ if !has("gui_running")
 endif
 
 au BufRead,BufNewFile *.pro     setfiletype make
-
-"source ~/.vim/scripts/kde-devel.vim
 
 " include pathogen
 call pathogen#infect()
