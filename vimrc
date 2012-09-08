@@ -41,6 +41,9 @@ let OmniCpp_MayCompleteScope=1    " autocomplete after ::
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
 
+" show/hide TagBar pressing F8
+nmap <F8> :TagbarToggle<CR>
+
 " :wsudo to save a protected file
 cab wsudo w !sudo tee %
 
