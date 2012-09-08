@@ -80,6 +80,9 @@ call pathogen#helptags()
 let OmniCpp_ShowPrototypeInAbbr=1 " show function parameters
 let OmniCpp_MayCompleteScope=1    " autocomplete after ::
 
+" Command-T
+let g:CommandTMaxHeight=15
+
 syntax on
 filetype plugin on
 

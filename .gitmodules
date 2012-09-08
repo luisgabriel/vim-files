@@ -31,3 +31,6 @@
 [submodule "bundle/color-molokai"]
 	path = bundle/color-molokai
 	url = git://github.com/tomasr/molokai.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://github.com/wincent/Command-T.git
