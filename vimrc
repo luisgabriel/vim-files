@@ -9,7 +9,7 @@ set expandtab
 set ignorecase      " ignore case when searching
 set smartcase       " except when you use an upper case letter
 
-set showmatch
+set showmatch       " show matching parenthesis
 
 set ruler           " show the cursor position all the time
 set cursorline      " highlight line under cursor
@@ -21,9 +21,10 @@ set novisualbell    " turn off visual bell
 set number          " show line numbers
 set title           " show title in console title bar
 set ttyfast         " smoother changes
+set wildmenu        " show options in command mode pressing Tab
 
 " show unwanted spaces with dots
-set list listchars=tab:>-,trail:.,extends:>
+set list listchars=tab:▸\ ,trail:·,nbsp:%,extends:→,precedes:←
 
 " keep a backup file in a separate directory
 set backup
@@ -34,12 +35,29 @@ set directory=~/.vim_local/tmp
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/qt4
 
-" OmniCppComplete
-let OmniCpp_ShowPrototypeInAbbr=1 " show function parameters
-let OmniCpp_MayCompleteScope=1    " autocomplete after ::
+" Move a line of text using ALT+[Up/Down]
+nmap <A-Down> mz:m+<cr>`z
+nmap <A-Up> mz:m-2<cr>`z
+vmap <A-Down> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <A-Up> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" clear the search buffer pressing ,/
+nmap <silent> ,/ :nohlsearch<CR>
+
+" help search to resolve merge conflicts
+nmap ,/m /<<<<<<<\\|=======\\|>>>>>>><CR>
 
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
+
+" pressing F3 before paste code will avoid autoident
+set pastetoggle=<F3>
+
+" pressing F4 switch mouse action between vim and terminal
+map <F4> :call SwitchMouse()<CR>
+
+" reload all opened files pressing F5
+nmap <F5> :tabdo windo edit<CR>
 
 " show/hide TagBar pressing F8
 nmap <F8> :TagbarToggle<CR>
@@ -58,7 +76,25 @@ au BufRead,BufNewFile *.pro     setfiletype make
 call pathogen#infect()
 call pathogen#helptags()
 
+" OmniCppComplete
+let OmniCpp_ShowPrototypeInAbbr=1 " show function parameters
+let OmniCpp_MayCompleteScope=1    " autocomplete after ::
+
 syntax on
 filetype plugin on
 
 colorscheme wombat
+
+
+""""""""""""""""""""""""""""""""""""""""""
+"           Helper functions             "
+""""""""""""""""""""""""""""""""""""""""""
+fun! SwitchMouse()
+    if &mouse == ""
+        let &mouse = "a"
+        echo "Mouse is for Vim (" . &mouse . ")"
+    else
+        let &mouse=""
+        echo "Mouse is for terminal"
+    endif
+endfunction
