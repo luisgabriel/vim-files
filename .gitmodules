@@ -16,3 +16,18 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "bundle/color-jellybeans"]
+	path = bundle/color-jellybeans
+	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/color-distinguished"]
+	path = bundle/color-distinguished
+	url = git://github.com/Lokaltog/vim-distinguished.git
+[submodule "bundle/color-solarized"]
+	path = bundle/color-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/color-badwolf"]
+	path = bundle/color-badwolf
+	url = git://github.com/sjl/badwolf.git
+[submodule "bundle/color-molokai"]
+	path = bundle/color-molokai
+	url = git://github.com/tomasr/molokai.git
