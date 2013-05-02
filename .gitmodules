@@ -43,3 +43,6 @@
 [submodule "bundle/clojure"]
 	path = bundle/clojure
 	url = git://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/color-gruvbox"]
+	path = bundle/color-gruvbox
+	url = git://github.com/morhetz/gruvbox.git
