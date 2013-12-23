@@ -46,3 +46,6 @@
 [submodule "bundle/color-gruvbox"]
 	path = bundle/color-gruvbox
 	url = git://github.com/morhetz/gruvbox.git
+[submodule "bundle/less"]
+	path = bundle/less
+	url = git://github.com/groenewege/vim-less.git
